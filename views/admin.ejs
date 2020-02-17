@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>No.</td>
+            <td>Name</td>
+            <td>Image</td>
+            <td>Desc</td>
+            <td>Video</td>
+            <td>Edit</td>
+        </tr>
+        <% products.forEach(e => { %>
+            <tr>
+                <td><%= e._id %></td>
+                <td><%= e.name %></td>
+                <td><%= e.image %></td>
+                <td><%= e.desc %></td>
+                <td><%= e.video %></td>
+                <td>
+                    <a href="/xoa/<%= e._id %>">Xoa</a>
+                    <a href="/sua/<%= e._id %>">Sua</a>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
