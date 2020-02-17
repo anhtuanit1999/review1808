@@ -78,11 +78,13 @@ app.post('/update/:id', upload.single('image'), (req, res) => {
 
 //******************************************
 
-const URL = 'mongodb://localhost:27017/shop';
+// const URL = 'mongodb://localhost:27017/shop';
+const URL = 'mongodb+srv://anhtuanit:caosuhu@mongodbproduct-ov1li.azure.mongodb.net/shop';
 
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.once('open', () => {
     app.listen(PORT, () => console.log(`Server listen at port ${PORT}`));
 });
+
 
